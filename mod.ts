@@ -1,5 +1,7 @@
 
-type Balance = {
+const API = 'https://dogechain.info/api/v1';
+
+export type Balance = {
 	balance: string,
 	confirmed: string,
 	unconfirmed: string,
@@ -7,7 +9,18 @@ type Balance = {
 };
 
 export async function balance(address: string): Promise<Balance> {
-	const response = await fetch(`https://dogechain.info/api/v1/address/balance/${address}`);
+	const response = await fetch(`${API}/address/balance/${address}`);
+	const json = await response.json();
+	return json;
+}
+
+export type Received = {
+	received: string,
+	success: number
+};
+
+export async function received(address: string): Promise<Received> {
+	const response = await fetch(`${API}/address/received/${address}`);
 	const json = await response.json();
 	return json;
 }
