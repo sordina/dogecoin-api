@@ -1,1 +1,3 @@
-# DogeCoin API - Deno Wrapper for https://dogechain.info/api/blockchain_api
+# DogeCoin API
+
+Deno Wrapper for https://dogechain.info/api/blockchain_api
