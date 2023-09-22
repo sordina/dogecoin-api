@@ -1,10 +1,14 @@
 
 const API = 'https://dogechain.info/api/v1';
 
-export type Error = {
+type ResponseError = {
 	error: string,
 	success: 0
 };
+
+function isResponseError(value: any): value is ResponseError {
+	return value.success === 0;
+}
 
 export class DogeError extends Error {
 	doge_error: true;
@@ -16,16 +20,12 @@ export class DogeError extends Error {
   }
 }
 
-export function isError(value: any): value is Error {
-	return value.success === 0;
-}
-
 export function isDogeError(value: any): value is DogeError {
 	return value.doge_error;
 }
 
-export function guardError(value: any) {
-	if(isError(value)) {
+function guardError(value: any) {
+	if(isResponseError(value)) {
 		throw new DogeError(value);
 	}
 }
