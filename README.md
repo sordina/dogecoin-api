@@ -10,7 +10,7 @@ From the repl:
 
 ```
 $ deno repl
-> import * as doge from 'https://deno.land/x/dogecoin@v0.1';
+> import * as doge from 'https://deno.land/x/dogecoin@v0.2.2/mod.ts';
 > doge
 [Module: null prototype] {
   DogeError: [class DogeError extends Error],
