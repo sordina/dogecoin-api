@@ -1,7 +1,7 @@
 
 const API = 'https://dogechain.info/api/v1';
 
-type ResponseError = {
+export type ResponseError = {
 	error: string,
 	success: 0
 };
@@ -12,7 +12,7 @@ function isResponseError(value: any): value is ResponseError {
 
 export class DogeError extends Error {
 	doge_error: true;
-	details: any;
+	details: ResponseError;
   constructor(info: any) {
     super();
     this.doge_error = true;
