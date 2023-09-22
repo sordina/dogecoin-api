@@ -2,6 +2,8 @@
 
 Deno Wrapper for https://dogechain.info/api/blockchain_api
 
+Listing on deno.land: https://deno.land/x/dogecoin@v0.2
+
 ## Usage
 
 From the repl:
@@ -22,6 +24,6 @@ $ deno repl
   transactions: [AsyncFunction: transactions],
   unspent: [AsyncFunction: unspent]
 }
-```>
+```
 
 
