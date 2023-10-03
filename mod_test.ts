@@ -15,7 +15,8 @@ const INVALID_ADDRESS = 'XXXAC8Q9Z4i4sXcbW7TV1jqrjG1JEWMdLyzcy';
 /**
  * Helper function to test valid and invalid calls to a method
  */
-function test_method(n: string, m: (k: string) => any) {
+function test_method(m: (k: string) => any) {
+	const n = m.name;
 	Deno.test(`valid ${n}`, async () => {
 		await m(VALID_ADDRESS);
 		assert(true);
@@ -32,10 +33,10 @@ function test_method(n: string, m: (k: string) => any) {
 	});
 }
 
-test_method('balance', doge.balance);
-test_method('received', doge.received);
-test_method('sent', doge.sent);
-test_method('unspent', doge.unspent);
-test_method('transactions', doge.transactions);
-test_method('transaction_count', doge.transaction_count);
+test_method(doge.balance);
+test_method(doge.received);
+test_method(doge.sent);
+test_method(doge.unspent);
+test_method(doge.transactions);
+test_method(doge.transaction_count);
 
