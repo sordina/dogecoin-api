@@ -1,4 +1,6 @@
 
+// deno-lint-ignore-file no-explicit-any
+
 const API = 'https://dogechain.info/api/v1';
 
 export type ResponseError = {
