@@ -21,7 +21,7 @@ export class DogeError extends Error {
 }
 
 export function isDogeError(value: any): value is DogeError {
-	return value.doge_error;
+	return value instanceof DogeError;
 }
 
 function guardError(value: any) {
